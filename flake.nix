@@ -6,9 +6,9 @@
   };
 
   outputs = { self, nixpkgs }: {
-    packages."x86_64-linux" =
+    packages."aarch64-darwin" =
       let
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = import nixpkgs { system = "aarch64-darwin"; };
       in
       rec {
         dockerImage =
@@ -62,7 +62,7 @@
                 "${nginxPort}/tcp" = { };
               };
             };
-          };
+          });
       };
   };
 }
